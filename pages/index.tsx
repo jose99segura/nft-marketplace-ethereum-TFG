@@ -1,8 +1,10 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-import type { NextPage } from 'next'
-import { BaseLayout, NftList } from '../components'
+import type { NextPage } from 'next';
+import { BaseLayout, NftList } from '../components';
+import nfts from '../content/meta.json'
+import { NftMeta } from '../types/nft';
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +22,9 @@ const Home: NextPage = () => {
           </div>
           
           {/* Mostramos la lista de los nft, que contiene los items */}
-          <NftList />
+          <NftList 
+            nfts = {nfts as NftMeta[]}
+          />
 
         </div>
       </div>
