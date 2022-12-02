@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import ActiveLink from '../link'
+import { useAccount } from '@hooks'
 
 const navigation = [
   { name: 'Marketplace', href: '/', current: true },
@@ -14,6 +15,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example() {
+
+  const { data, isValidating, error } = useAccount("Some Random Params");
+
+  console.log(data);
+  
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
