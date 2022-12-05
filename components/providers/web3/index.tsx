@@ -13,17 +13,25 @@ const Web3Provider: FunctionComponent = ({children}:any) => {
 
     useEffect(() => {
         async function initWeb3(){
-            
-            const provider = new ethers.providers.Web3Provider(window.ethereum as any);
-            const contract = await loadContract("NftMarket", provider);
+            try{
+                const provider = new ethers.providers.Web3Provider(window.ethereum as any);
+                const contract = await loadContract("NftMarket", provider);
 
-            setWeb3Api(createWeb3State({
-                ethereum: window.ethereum,
-                provider,
-                contract,
-                isLoading: true
-            }))
+                setWeb3Api(createWeb3State({
+                    ethereum: window.ethereum,
+                    provider,
+                    contract,
+                    isLoading: true
+                }))
+            }catch(e: any){
+                console.error("Por favor, instale MetaMask para poder acceder con tu wallet");
+                setWeb3Api((api) => createWeb3State ({
+                    ...api as any,
+                    isLoading: false,
+                }))
+            }              
         }
+
         initWeb3();
     }, [])
 
@@ -36,6 +44,11 @@ const Web3Provider: FunctionComponent = ({children}:any) => {
 
 export function useWeb3(){
     return useContext(Web3Context);
+}
+
+export function useHooks(){
+    const { hooks } = useWeb3();
+    return hooks;
 }
 
 
