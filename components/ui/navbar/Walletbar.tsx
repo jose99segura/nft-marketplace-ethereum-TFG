@@ -32,7 +32,8 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
                 <span className="sr-only">Open user menu</span>
                 <img
                   className="h-8 w-8 rounded-full"
-                  src="/images/default_user_image.png"
+                  // src="/images/default_user_image.png"
+                  src="/images/1.webp"
                   alt=""
                 />
               </Menu.Button>
@@ -54,7 +55,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
                     <a
                       className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                     >
-                      Profile
+                      Perfil
                     </a>
                   </Link>
     
@@ -74,7 +75,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           type="button"
           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Loading ...
+          Cargando ...
         </button>
       </div>
     )
@@ -92,7 +93,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           type="button"
           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Connect Wallet
+          Conectar Wallet
         </button>
       </div>
     )
@@ -106,7 +107,7 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
           type="button"
           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          No Wallet
+          No hay wallet
         </button>
       </div>
     )

@@ -23,7 +23,7 @@ const Profile: NextPage = () => {
             <main className="flex-1 overflow-y-auto">
               <div className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex">
-                  <h1 className="flex-1 text-2xl font-bold text-gray-900">Your NFTs</h1>
+                  <h1 className="flex-1 text-2xl font-bold text-gray-900">Tus NFTs</h1>
                 </div>
                 <div className="mt-3 sm:mt-2">
                   <div className="hidden sm:block">
@@ -76,7 +76,7 @@ const Profile: NextPage = () => {
                             )}
                           />
                           <button type="button" className="absolute inset-0 focus:outline-none">
-                            <span className="sr-only">View details for {nft.name}</span>
+                            <span className="sr-only">Ver detalles de {nft.name}</span>
                           </button>
                         </div>
                         <p className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">
@@ -100,7 +100,7 @@ const Profile: NextPage = () => {
                   <div className="mt-4 flex items-start justify-between">
                     <div>
                       <h2 className="text-lg font-medium text-gray-900">
-                        <span className="sr-only">Details for </span>
+                        <span className="sr-only">Detalles de </span>
                         {nfts[0].name}
                       </h2>
                       <p className="text-sm font-medium text-gray-500">{nfts[0].description}</p>
@@ -108,7 +108,7 @@ const Profile: NextPage = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900">Information</h3>
+                  <h3 className="font-medium text-gray-900">Información</h3>
                   <dl className="mt-2 border-t border-b border-gray-200 divide-y divide-gray-200">
                     {nfts[0].attributes.map((attr) => (
                       <div key={attr.trait_type} className="py-3 flex justify-between text-sm font-medium">
@@ -124,14 +124,14 @@ const Profile: NextPage = () => {
                     type="button"
                     className="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
-                    Download Image
+                    Descargar ticket
                   </button>
                   <button
                     onClick={() => {}}
                     type="button"
                     className="flex-1 ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
-                    Transfer?
+                    Vender ticket
                   </button>
                 </div>
               </div>
