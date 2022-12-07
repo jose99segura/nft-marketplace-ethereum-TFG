@@ -6,7 +6,7 @@ import { useAccount } from '@hooks/web3'
 import Walletbar from './Walletbar'
 
 const navigation = [
-  { name: 'Marketplace', href: '/', current: true },
+  { name: 'Mercado', href: '/', current: true },
   // { name: 'Create', href: '/nft/create', current: false }
 ]
 
