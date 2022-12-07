@@ -1,4 +1,5 @@
-[{
+[
+  {
     "description": "Ticket en Zona X para poder acceder al evento.",
     "image": "https://eincode.mypinata.cloud/ipfs/QmaQYCrX9Fg2kGijqapTYgpMXV7QPPzMwGrSRfV9TvTsfM/Creature_1.png",
     "name": "Ticket Evento #1",
@@ -34,4 +35,5 @@
         "value": "Silver"
       }
     ]
-  }]
+  }
+]

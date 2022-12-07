@@ -16,11 +16,6 @@ const Home: NextPage = () => {
     console.log(await contract!.symbol());
   }
 
-  // if (contract) {
-  //   getNftInfo();
-  // }
-  
-
   const getAccounts = async () => {
     const accounts = await provider!.listAccounts();
     console.log(accounts[0]);
