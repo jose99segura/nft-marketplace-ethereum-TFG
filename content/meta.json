@@ -1,7 +1,7 @@
 [
   {
     "description": "Ticket en Zona X para poder acceder al evento.",
-    "image": "https://eincode.mypinata.cloud/ipfs/QmaQYCrX9Fg2kGijqapTYgpMXV7QPPzMwGrSRfV9TvTsfM/Creature_1.png",
+    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/soccer-posters-design-template-c9cc50f1fe2be8ce3ed396cb91b4f1f3_screen.jpg?ts=1637036920",
     "name": "Ticket Evento #1",
     "attributes": [
       {
@@ -19,7 +19,7 @@
     ]
   },{
     "description": "Ticket en Zona X para poder acceder al evento.",
-    "image": "https://eincode.mypinata.cloud/ipfs/QmaQYCrX9Fg2kGijqapTYgpMXV7QPPzMwGrSRfV9TvTsfM/Creature_2.png",
+    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/soccer-posters-design-template-c9cc50f1fe2be8ce3ed396cb91b4f1f3_screen.jpg?ts=1637036920",
     "name": "Ticket Evento #2",
     "attributes": [
       {
@@ -29,6 +29,24 @@
       {
         "trait_type": "Asiento",
         "value": "124"
+      },
+      {
+        "trait_type": "Categoría",
+        "value": "Silver"
+      }
+    ]
+  },{
+    "description": "Ticket en Zona X para poder acceder al evento.",
+    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/soccer-posters-design-template-c9cc50f1fe2be8ce3ed396cb91b4f1f3_screen.jpg?ts=1637036920",
+    "name": "Ticket Evento #3",
+    "attributes": [
+      {
+        "trait_type": "Zona",
+        "value": "C"
+      },
+      {
+        "trait_type": "Asiento",
+        "value": "164"
       },
       {
         "trait_type": "Categoría",
