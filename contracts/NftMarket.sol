@@ -37,7 +37,7 @@ contract NftMarket is ERC721URIStorage{
         return _idToNftItem[tokenId];
     }
 
-    function liesteItemsCount() public view returns (uint) {
+    function listedItemsCount() public view returns (uint) {
         return _listedItems.current();
     }
 
@@ -62,6 +62,22 @@ contract NftMarket is ERC721URIStorage{
         _usedTokenURIs[tokenURI] = true;
 
         return newTokenId;
+    }
+
+    // Funcion para comprar el nft
+    function buyNft( uint tokenId ) public payable {
+        uint price = _idToNftItem[tokenId].price;
+        address owner = ERC721.ownerOf(tokenId);
+
+        require(msg.sender != owner, "Ya posees este NFT");
+        require(msg.value == price, "El precio es incorrecto");
+
+        _idToNftItem[tokenId].isListed = false;
+        _listedItems.decrement();
+        // Transferir el token desde el owner hacia el que interactua con el programa
+        _transfer(owner, msg.sender, tokenId);
+        payable(owner).transfer(msg.value);
+
     }
 
     // ------------------ FUNCIONES PRIVADAS ------------------
