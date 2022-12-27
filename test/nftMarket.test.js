@@ -84,4 +84,110 @@ contract("NftMarket", accounts => {
           assert.equal(currentOwner, accounts[1], "Item is still listed");
         })
       })
+
+    describe("Token transfers", () => {
+        const tokenURI = "https://test-json-2.com";
+        before(async () => {
+            await _contract.mintToken(tokenURI, _nftPrice, {
+            from: accounts[0],
+            value: _listingPrice
+            })
+        })
+
+        it("should have two NFTs created", async () => {
+            const totalSupply = await _contract.totalSupply();
+            assert.equal(totalSupply.toNumber(), 2, "Total supply of token is not correct");
+        })
+
+        it("should be able to retreive nft by index", async () => {
+            const nftId1 = await _contract.tokenByIndex(0);
+            const nftId2 = await _contract.tokenByIndex(1);
+
+
+            assert.equal(nftId1.toNumber(), 1, "Nft id is wrong");
+            assert.equal(nftId2.toNumber(), 2, "Nft id is wrong");
+        })
+        
+        it("should have one listed NFT", async () => {
+            const allNfts = await _contract.getAllNftsOnSale();
+            assert.equal(allNfts[0].tokenId, 2, "Nft has a wrong id");
+          })
+
+        it("account[1] should have one owned NFT", async () => {
+            const ownedNfts = await _contract.getOwnedNfts({from: accounts[1]});
+            assert.equal(ownedNfts[0].tokenId, 1, "Nft has a wrong id");
+        })
+    
+        it("account[0] should have one owned NFT", async () => {
+            const ownedNfts = await _contract.getOwnedNfts({from: accounts[0]});
+            assert.equal(ownedNfts[0].tokenId, 2, "Nft has a wrong id");
+        })
+    })
+
+    describe("Token transfer to new owner", () => {
+        before(async () => {
+          await _contract.transferFrom(
+            accounts[0],
+            accounts[1],
+            2
+          )
+        })
+    
+        it("accounts[0] should own 0 tokens", async () => {
+          const ownedNfts = await _contract.getOwnedNfts({from: accounts[0]});
+          assert.equal(ownedNfts.length, 0, "Invalid length of tokens");
+        })
+    
+        it("accounts[1] should own 2 tokens", async () => {
+          const ownedNfts = await _contract.getOwnedNfts({from: accounts[1]});
+          assert.equal(ownedNfts.length, 2, "Invalid length of tokens");
+        })
+    })
+
+    // describe("Burn Token", () => {
+    //     const tokenURI = "https://test-json3.com";
+    //     before(async () => {
+    //       await _contract.mintToken(tokenURI, _nftPrice,  {
+    //         from: accounts[2],
+    //         value: _listingPrice
+    //       })
+    //     })
+    
+    //     it("account[2] should have one owned NFT", async () => {
+    //       const ownedNfts = await _contract.getOwnedNfts({from: accounts[2]});
+    
+    //       assert.equal(ownedNfts[0].tokenId, 3, "Nft has a wrong id");
+    //     })
+    
+    //     it("account[2] should own 0 NFTs", async () => {
+    //       await _contract.burnToken(3, {from: accounts[2]});
+    //       const ownedNfts = await _contract.getOwnedNfts({from: accounts[2]});
+    
+    //       assert.equal(ownedNfts.length, 0, "Invalid length of tokens");
+    //     }) 
+    //   })
+
+      describe("List an Nft", () => {
+        before(async () => {
+          await _contract.placeNftOnSale(
+            1,
+            _nftPrice, { from: accounts[1], value: _listingPrice}
+          )
+        })
+    
+        it("should have two listed items", async () => {
+          const listedNfts = await _contract.getAllNftsOnSale();
+    
+          assert.equal(listedNfts.length, 2, "Invalid length of Nfts");
+        })
+    
+        it("should set new listing price", async () => {
+          await _contract
+            .setListingPrice(_listingPrice, {from: accounts[0]});
+          const listingPrice = await _contract.listingPrice();
+    
+          assert.equal(listingPrice.toString(), _listingPrice, "Invalid Price");
+        })
+    
+      })
 })
