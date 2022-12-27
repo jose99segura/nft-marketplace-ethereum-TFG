@@ -3,7 +3,7 @@
 
 import type { NextPage } from 'next';
 import { BaseLayout, NftList } from '@ui';
-import { NftMeta } from '@_types/nft';
+import { Nft } from '@_types/nft';
 import { useListedNfts } from '@hooks/web3';
 
 
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           
           {/* Mostramos la lista de los nft, que contiene los items */}
           <NftList 
-            nfts = {nfts?.data}
+            nfts = {nfts?.data as Nft[]}
           />
 
         </div>
