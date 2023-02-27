@@ -5,13 +5,18 @@ import { ChangeEvent, useState } from 'react';
 import { BaseLayout } from '@ui'
 import { Switch } from '@headlessui/react'
 import Link from 'next/link'
-import { NftMeta } from '@_types/nft';
+import { NftMeta, PinataRes } from '@_types/nft';
 import axios from 'axios';
 import { useWeb3 } from '@providers/web3';
+import { ethers } from 'ethers';
+import { toast } from "react-toastify";
+
+const ALLOWED_FIELDS = ["name", "description", "image", "attributes"];
 
 const NftCreate: NextPage = () => {
-  const {ethereum} = useWeb3();
+  const {ethereum, contract} = useWeb3();
   const [nftURI, setNftURI] = useState("");
+  const [price, setPrice] = useState("");
   const [hasURI, setHasURI] = useState(false);
   const [nftMeta, setNftMeta] = useState<NftMeta>({
     name: "",
@@ -23,6 +28,58 @@ const NftCreate: NextPage = () => {
       {trait_type: "speed", value: "0"},
     ]
   });
+
+  const getSignedData = async () => {
+    const messageToSign = await axios.get("/api/verify");
+    const accounts = await ethereum?.request({method: "eth_requestAccounts"}) as string[];
+    const account = accounts[0];
+
+    const signedData = await ethereum?.request({
+      method: "personal_sign",
+      params: [JSON.stringify(messageToSign.data), account, messageToSign.data.id]
+    })
+
+    return {signedData, account};
+  }
+
+  const handleImage = async (e: ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) {
+      console.error("Select a file");
+      return;
+    }
+
+    const file = e.target.files[0];
+    const buffer = await file.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    
+    try {
+      const {signedData, account} = await getSignedData();
+      const promise = axios.post("/api/verify-image", {
+        address: account,
+        signature: signedData,
+        bytes,
+        contentType: file.type,
+        fileName: file.name.replace(/\.[^/.]+$/, "")
+      });
+
+      const res = await toast.promise(
+        promise, {
+          pending: "Uploading image",
+          success: "Image uploaded",
+          error: "Image upload error"
+        }
+      )
+
+      const data = res.data as PinataRes;
+
+      setNftMeta({
+        ...nftMeta,
+        image: `${process.env.NEXT_PUBLIC_PINATA_DOMAIN}/ipfs/${data.IpfsHash}`
+      });
+    } catch(e: any) {
+      console.error(e.message);
+    }
+  }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -40,24 +97,57 @@ const NftCreate: NextPage = () => {
     })
   }
 
-  const createNft = async () => {
+  const uploadMetadata = async () => {
     try {
-      const messageToSign = await axios.get("/api/verify");
-      const accounts = await ethereum?.request({method: "eth_requestAccounts"}) as string[];
-      const account = accounts[0];
+      const {signedData, account} = await getSignedData();
 
-      const signedData = await ethereum?.request({
-        method: "personal_sign",
-        params: [JSON.stringify(messageToSign.data), account, messageToSign.data.id]
-      })
-
-      await axios.post("/api/verify", {
+      const promise = axios.post("/api/verify", {
         address: account,
         signature: signedData,
         nft: nftMeta
       })
 
+      const res = await toast.promise(
+        promise, {
+          pending: "Uploading metadata",
+          success: "Metadata uploaded",
+          error: "Metadata upload error"
+        }
+      )
+
+      const data = res.data as PinataRes;
+      setNftURI(`${process.env.NEXT_PUBLIC_PINATA_DOMAIN}/ipfs/${data.IpfsHash}`);
     } catch (e: any) {
+      console.error(e.message);
+    }
+  }
+
+  const createNft = async () => {
+    try {
+      const nftRes = await axios.get(nftURI);
+      const content = nftRes.data;
+
+      Object.keys(content).forEach(key => {
+        if (!ALLOWED_FIELDS.includes(key)) {
+          throw new Error("Invalid Json structure");
+        }
+      })
+
+      const tx = await contract?.mintToken(
+        nftURI,
+        ethers.utils.parseEther(price), {
+          value: ethers.utils.parseEther(0.025.toString())
+        }
+      );
+      
+      await toast.promise(
+        tx!.wait(), {
+          pending: "Uploading metadata",
+          success: "Metadata uploaded",
+          error: "Metadata upload error"
+        }
+      );
+    } catch(e: any) {
       console.error(e.message);
     }
   }
@@ -121,7 +211,7 @@ const NftCreate: NextPage = () => {
                     <div className='mb-4 p-4'>
                       <div className="font-bold">Your metadata: </div>
                       <div>
-                        <Link href={nftURI}>
+                        <Link legacyBehavior href={nftURI}>
                           <a className="underline text-indigo-600">
                             {nftURI}
                           </a>
@@ -136,6 +226,8 @@ const NftCreate: NextPage = () => {
                       </label>
                       <div className="mt-1 flex rounded-md shadow-sm">
                         <input
+                          onChange={(e) => setPrice(e.target.value)}
+                          value={price}
                           type="number"
                           name="price"
                           id="price"
@@ -147,6 +239,7 @@ const NftCreate: NextPage = () => {
                   </div>
                   <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <button
+                      onClick={createNft}
                       type="button"
                       className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
@@ -207,8 +300,8 @@ const NftCreate: NextPage = () => {
                     </p>
                   </div>
                   {/* Has Image? */}
-                  { false ?
-                    <img src="https://eincode.mypinata.cloud/ipfs/QmaQYCrX9Fg2kGijqapTYgpMXV7QPPzMwGrSRfV9TvTsfM/Creature_1.png" alt="" className="h-40" /> :
+                  { nftMeta.image ?
+                    <img src={nftMeta.image} alt="" className="h-40" /> :
                     <div>
                     <label className="block text-sm font-medium text-gray-700">Image</label>
                     <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -234,6 +327,7 @@ const NftCreate: NextPage = () => {
                           >
                             <span>Upload a file</span>
                             <input
+                              onChange={handleImage}
                               id="file-upload"
                               name="file-upload"
                               type="file"
@@ -270,7 +364,7 @@ const NftCreate: NextPage = () => {
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
-                    onClick={createNft}
+                    onClick={uploadMetadata}
                     type="button"
                     className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
