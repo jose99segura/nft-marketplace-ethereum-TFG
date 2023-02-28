@@ -4,15 +4,15 @@
   "name": "Eincode Creature #1",
   "attributes": [
     {
-      "trait_type": "attack",
+      "trait_type": "Zona",
       "value": "20"
     },
     {
-      "trait_type": "health",
+      "trait_type": "Asiento",
       "value": "100"
     },
     {
-      "trait_type": "speed",
+      "trait_type": "Categoría",
       "value": "30"
     }
   ]
