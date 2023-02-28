@@ -9,7 +9,7 @@ import { Nft } from '@_types/nft';
 import { useOwnedNfts } from '@hooks/web3';
 
 const tabs = [
-  { name: 'Your Collection', href: '#', current: true },
+  { name: 'Tu colección', href: '#', current: true },
 ]
 
 function classNames(...classes: string[]) {
