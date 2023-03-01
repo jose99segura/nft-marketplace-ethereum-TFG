@@ -40,7 +40,7 @@ contract NftMarket is ERC721URIStorage, Ownable{
 
     // ------------------ FUNCIONES PUBLICAS ------------------
      function setListingPrice(uint newPrice) external onlyOwner {
-        require(newPrice > 0, "Price must be at least 1 wei");
+        require(newPrice > 0, "Precio debe ser al menos 1 wei");
         listingPrice = newPrice;
     }
 
@@ -108,8 +108,8 @@ contract NftMarket is ERC721URIStorage, Ownable{
     function mintToken(string memory tokenURI, uint price) public payable returns (uint){   
         //tokenURI es el link al metadata, pinata en nuestro caso --> https://pinata.com/metadata
         //msg.sender es la dirección de nuestra cartera de metamask
-        require(!tokenURIExists(tokenURI), "Token URI already exists");
-        require(msg.value == listingPrice, "Price must be equal to listing price");
+        require(!tokenURIExists(tokenURI), "Token URI ya existe");
+        require(msg.value == listingPrice, "El precio debe ser igual al precio de listado");
 
         _tokenIds.increment();
         _listedItems.increment();
@@ -141,9 +141,9 @@ contract NftMarket is ERC721URIStorage, Ownable{
     }
 
     function placeNftOnSale(uint tokenId, uint newPrice) public payable {
-        require(ERC721.ownerOf(tokenId) == msg.sender, "You are not owner of this nft");
-        require(_idToNftItem[tokenId].isListed == false, "Item is already on sale");
-        require(msg.value == listingPrice, "Price must be equal to listing price");
+        require(ERC721.ownerOf(tokenId) == msg.sender, "No eres dueno de este NFT");
+        require(_idToNftItem[tokenId].isListed == false, "Este item ya se encuentra en venta");
+        require(msg.value == listingPrice, "Precio debe ser igual al precio listado");
 
         _idToNftItem[tokenId].isListed = true;
         _idToNftItem[tokenId].price = newPrice;

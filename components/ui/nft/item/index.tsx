@@ -32,7 +32,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
             <div className="overflow-hidden mb-4">
                 <dl className="-mx-4 -mt-4 flex flex-wrap">
                 <div className="flex flex-col px-4 pt-4">
-                    <dt className="order-2 text-sm font-medium text-gray-500">Price</dt>
+                    <dt className="order-2 text-sm font-medium text-gray-500">Precio</dt>
                     <dd className="order-1 text-xl font-extrabold text-indigo-600">
                     <div className="flex justify-center items-center">
                         {item.price}
