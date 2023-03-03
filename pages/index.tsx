@@ -14,9 +14,9 @@ const Home: NextPage = () => {
         </div>
         <div className="relative">
           <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Tickets(NFT) Premium de Evento X</h2>
+            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Tickets(NFT) destacados de La Liga</h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              Descripción breve del evento
+              La liga española de fútbol ofrece la posibilidad de adquirir los tickets NFT y poder ver los partidos de forma online o presencial.
             </p>
           </div>
           
