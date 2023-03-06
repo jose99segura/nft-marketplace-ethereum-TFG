@@ -39,6 +39,16 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
+                    className="hidden h-11 w-auto lg:block"
+                    src="https://gateway.pinata.cloud/ipfs/QmXKTnVk7Rdh5NHpAL5MLxEqEhcnzi8B3c8f1FgfAfEwFs"
+                    alt="Entrablock"
+                  />
+                  <img
+                    className="hidden h-11  lg:block"
+                    src="https://gateway.pinata.cloud/ipfs/Qmf3r5UeGF9CUrA7wGwxv3TREf8JdHiYu7jr4FkERs3LY7"
+                    alt="Entrablock"
+                  />
+                  <img
                     className="block h-8 w-auto lg:hidden"
                     src="https://gateway.pinata.cloud/ipfs/Qme4xUnNk6hiahV3LMeiNDB7rDCQ87zCjWowAeeJiXwozW"
                     alt="Entrablock"
@@ -48,6 +58,7 @@ export default function Example() {
                     src="https://gateway.pinata.cloud/ipfs/Qme4xUnNk6hiahV3LMeiNDB7rDCQ87zCjWowAeeJiXwozW"
                     alt="Entrablock"
                   />
+                  
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
