@@ -70,23 +70,46 @@ contract NftMarket is ERC721URIStorage, Ownable{
         return _ownedTokens[owner][index];
     }
 
+    function getAllNftsOfficial() public view returns (NftItem[] memory) {
+    uint allItemsCounts = totalSupply();
+    uint currentIndex = 0;
+    
+    NftItem[] memory items = new NftItem[](_listedItems.current());
+
+        for (uint i = 0; i < allItemsCounts; i++) {
+            uint tokenId = tokenByIndex(i);
+            address owner = ERC721.ownerOf(tokenId);
+            if (owner == address(0x501Af74bDD5F8296EC1367a4E3D7f581c4dedce4)) {
+                NftItem storage item = _idToNftItem[tokenId];
+
+                if (item.isListed == true) {
+                    items[currentIndex] = item;
+                    currentIndex += 1;
+                }
+            }
+            
+        }
+
+    return items;
+    }
+
     function getAllNftsOnSale() public view returns (NftItem[] memory) {
     uint allItemsCounts = totalSupply();
     uint currentIndex = 0;
     NftItem[] memory items = new NftItem[](_listedItems.current());
 
-    for (uint i = 0; i < allItemsCounts; i++) {
-      uint tokenId = tokenByIndex(i);
-      NftItem storage item = _idToNftItem[tokenId];
+        for (uint i = 0; i < allItemsCounts; i++) {
+        uint tokenId = tokenByIndex(i);
+        NftItem storage item = _idToNftItem[tokenId];
 
-      if (item.isListed == true) {
-        items[currentIndex] = item;
-        currentIndex += 1;
-      }
-    }
+        if (item.isListed == true) {
+            items[currentIndex] = item;
+            currentIndex += 1;
+        }
+        }
 
     return items;
-  }
+    }
 
     function getOwnedNfts() public view returns (NftItem[] memory) {
         uint ownedItemsCount = ERC721.balanceOf(msg.sender);

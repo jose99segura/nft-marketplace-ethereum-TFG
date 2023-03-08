@@ -7,7 +7,7 @@ type NftItemProps = {
     buyNft: (token: number, value: number) => Promise<void>;
 }
 
-const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
+const NftItemSecundario: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
 
     return (
         <>
@@ -26,7 +26,6 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
                 </p>
                 <div className="block mt-2">
                 <p className="text-xl font-semibold text-gray-900">{item.meta.name}</p>
-                <p className="mt-3 mb-3 text-base text-gray-500">{item.meta.description}</p>
                 </div>
             </div>
             <div className="overflow-hidden mb-4">
@@ -80,4 +79,4 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
     )
 }
 
-export default NftItem;
+export default NftItemSecundario;

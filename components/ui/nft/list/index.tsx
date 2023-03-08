@@ -10,17 +10,22 @@ const NftList: FunctionComponent = () => {
 
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
             {
-                nfts.data?.map( nft =>
-                    <div key={nft.meta.image} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                        {/* Mostramos el elemento nft dentro de la lista */}
-                        <NftItem 
-                            item={nft}
-                            buyNft={nfts.buyNft}
-                        />
-                    </div>
-                )  
+                nfts.data?.map( nft => {
+                    if (nft.meta.attributes[0].value == "La Liga NFTs") {
+                        return (
+                            <div key={nft.meta.image} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                                {/* Mostramos el elemento nft dentro de la lista */}
+                                <NftItem 
+                                item={nft}
+                                buyNft={nfts.buyNft}
+                            />
+                            </div>
+                        );
+                    }
+                    
+                })  
             }
-          </div>
+        </div>
     )
 }
 

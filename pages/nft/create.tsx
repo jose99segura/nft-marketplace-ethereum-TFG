@@ -23,9 +23,10 @@ const NftCreate: NextPage = () => {
     description: "",
     image: "",
     attributes: [
-      {trait_type: "Zona", value: "0"},
-      {trait_type: "Asiento", value: "0"},
-      {trait_type: "Categoría", value: "0"},
+      {trait_type: "Evento", value: "La liga"},
+      {trait_type: "Zona", value: "A"},
+      {trait_type: "Asiento", value: "22"},
+      {trait_type: "Categoría", value: "ORO"},
     ]
   });
 
@@ -341,7 +342,7 @@ const NftCreate: NextPage = () => {
                     </div>
                   </div>
                   }
-                  <div className="grid grid-cols-6 gap-6">
+                  <div className="grid grid-cols-4 gap-6">
                     { nftMeta.attributes.map(attribute =>
                       <div key={attribute.trait_type} className="col-span-6 sm:col-span-6 lg:col-span-2">
                         <label htmlFor={attribute.trait_type} className="block text-sm font-medium text-gray-700">
@@ -358,9 +359,9 @@ const NftCreate: NextPage = () => {
                       </div>
                     )}
                   </div>
-                  <p className="text-sm !mt-2 text-gray-500">
+                  {/* <p className="text-sm !mt-2 text-gray-500">
                     Elige valor entre 0 y 100
-                  </p>
+                  </p> */}
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button

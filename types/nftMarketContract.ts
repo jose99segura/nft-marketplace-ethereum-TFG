@@ -93,6 +93,7 @@ export type NftMarketContractMethodNames =
   | 'totalSupply'
   | 'tokenByIndex'
   | 'tokenOfOwnerByIndex'
+  | 'getAllNftsOfficial'
   | 'getAllNftsOnSale'
   | 'getOwnedNfts'
   | 'burnToken'
@@ -408,6 +409,11 @@ export interface NftMarketContract {
    * StateMutability: view
    * Type: function
    */
+  getAllNftsOfficial(
+    overrides?: ContractCallOverrides
+  ): Promise<NftitemResponse[]>;
+
+  
   getAllNftsOnSale(
     overrides?: ContractCallOverrides
   ): Promise<NftitemResponse[]>;

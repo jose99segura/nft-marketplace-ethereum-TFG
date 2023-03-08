@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import type { NextPage } from 'next';
-import { BaseLayout, NftList } from '@ui';
+import { BaseLayout, NftListSecundario } from '@ui';
 
 const Home: NextPage = () => {
 
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           </div>
           
           {/* Mostramos la lista de los nft, que contiene los items */}
-          <NftList />
+          <NftListSecundario />
 
         </div>
       </div>
