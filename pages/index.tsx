@@ -21,7 +21,9 @@ const Home: NextPage = () => {
           </div>
           
           {/* Mostramos la lista de los nft, que contiene los items */}
-          <NftList />
+          <NftList 
+          evento="La Liga NFTs"
+          />
 
         </div>
       </div>
@@ -39,7 +41,9 @@ const Home: NextPage = () => {
           </div>
           
           {/* Mostramos la lista de los nft, que contiene los items */}
-          <NftList />
+          <NftList 
+          evento="Congreso Programación NFTs"
+          />
 
         </div>
       </div>
