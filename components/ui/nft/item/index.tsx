@@ -22,7 +22,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
             <div className="flex-1 bg-white p-6 flex flex-col justify-between">
             <div className="flex-1">
                 <p className="text-sm font-medium text-indigo-600">
-                Evento Premium NFT
+                La Liga NFTs
                 </p>
                 <div className="block mt-2">
                 <p className="text-xl font-semibold text-gray-900">{item.meta.name}</p>
