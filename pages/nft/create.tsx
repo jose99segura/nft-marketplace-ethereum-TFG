@@ -27,7 +27,6 @@ const NftCreate: NextPage = () => {
       {trait_type: "Zona", value: "A"},
       {trait_type: "Asiento", value: "22"},
       {trait_type: "Categoría", value: "ORO"},
-      {trait_type: "Tipo", value: "Oficial"},
     ]
   });
 

@@ -6,6 +6,8 @@ import { useCallback } from "react";
 import { toast } from "react-toastify";
 import useSWR from "swr";
 
+import { NftMarketContract } from "@_types/nftMarketContract";
+
 type UseListedNftsResponse = {
   buyNft: (token: number, value: number) => Promise<void>
 }
@@ -26,12 +28,19 @@ export const hookFactory: ListedNftsHookFactory = ({contract}) => () => {
         const metaRes = await fetch(tokenURI);
         const meta = await metaRes.json();
 
+        // Obtener las transacciones del token
+        const tokenTransactions = await contract!.queryFilter(
+        contract!.filters.Transfer(item.owner, null, item.tokenId),
+        "earliest"
+        );
+
         nfts.push({
           price: parseFloat(ethers.utils.formatEther(item.price)),
           tokenId: item.tokenId.toNumber(),
           creator: item.creator,
           isListed: item.isListed,
-          meta
+          meta,
+          transactions: tokenTransactions
         })
       }
       

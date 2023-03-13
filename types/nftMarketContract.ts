@@ -126,6 +126,7 @@ export interface TransferEventEmittedResponse {
   tokenId: BigNumberish;
 }
 export interface NftitemResponse {
+  owner: any;
   tokenId: BigNumber;
   0: BigNumber;
   price: BigNumber;
@@ -136,6 +137,8 @@ export interface NftitemResponse {
   3: boolean;
 }
 export interface NftMarketContract {
+  filters: any;
+  queryFilter(arg0: any, arg1: string): unknown;
   /**
    * Payable: false
    * Constant: false

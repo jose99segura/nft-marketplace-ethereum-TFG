@@ -17,7 +17,8 @@ export type NftCore = {
   tokenId: number;
   price: number;
   creator: string;
-  isListed: boolean
+  isListed: boolean;
+  transactions: any
 }
 
 export type Nft = {

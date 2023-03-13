@@ -18,7 +18,9 @@ const NftList: FunctionComponent<NftListProps> = (props) => {
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
             {
                 nfts.data?.map( nft => {
-                    if (nft.meta.attributes[0].value == evento) {
+
+                    if (nft.meta.attributes[0].value == evento && nft.transactions.length <= 1) {
+
                         return (
                             <div key={nft.meta.image} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 {/* Mostramos el elemento nft dentro de la lista */}
