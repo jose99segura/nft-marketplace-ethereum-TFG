@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import { BaseLayout } from '@ui'
 import { useEffect, useState } from 'react';
 
-import nfts from "../content/meta.json";
+// import nfts from "../content/meta.json";
 import { Nft } from '@_types/nft';
 import { useOwnedNfts } from '@hooks/web3';
 

@@ -25,13 +25,19 @@ export const hookFactory: OwnedNftsHookFactory = ({contract}) => () => {
         const tokenURI = await contract!.tokenURI(item.tokenId);
         const metaRes = await fetch(tokenURI);
         const meta = await metaRes.json();
+        // Obtener las transacciones del token
+        const tokenTransactions = await contract!.queryFilter(
+          contract!.filters.Transfer(item.owner, null, item.tokenId),
+          "earliest"
+          );
 
         nfts.push({
           price: parseFloat(ethers.utils.formatEther(item.price)),
           tokenId: item.tokenId.toNumber(),
           creator: item.creator,
           isListed: item.isListed,
-          meta
+          meta,
+          transactions: tokenTransactions
         })
       }
       

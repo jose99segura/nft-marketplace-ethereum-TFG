@@ -4,6 +4,8 @@ import useSWR from "swr";
 
 const NETWORKS: {[k: string]: string} = {
     1: "Ethereum Main Network",
+    4: "Rinkeby Test Network",
+    5: "Goerli Test Network",
     1337: "Ganache Test Network"
 }
 

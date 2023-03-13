@@ -13,7 +13,7 @@ const NftListSecundario: FunctionComponent = () => {
             {
                 nfts.data?.map( nft => {
 
-                    // if (nft.transactions.length > 1) {
+                    if (nft.transactions.length > 1) {
                         return (
                             <div key={nft.meta.image} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 {/* Mostramos el elemento nft dentro de la lista */}
@@ -23,7 +23,7 @@ const NftListSecundario: FunctionComponent = () => {
                                 />
                             </div>
                         );
-                    // }
+                    }
                 })
             }
         </div>

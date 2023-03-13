@@ -6,6 +6,7 @@ type LinkProps = {
   href: string
   children: ReactElement
   activeClass: string
+  legacyBehavior?: boolean
 }
 
 const ActiveLink: FunctionComponent<LinkProps> = ({children, ...props}) => {

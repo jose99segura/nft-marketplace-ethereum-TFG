@@ -4,6 +4,10 @@ import { ethers } from "ethers";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { NftMarketContract } from "@_types/nftMarketContract";
 
+interface Web3ProviderProps {
+  children: React.ReactNode;
+}
+
 const pageReload = () => {window.location.reload() }
 
 const handleAccount = (ethereum: MetaMaskInpageProvider) => async () => {
@@ -18,14 +22,14 @@ const setGlobalListeners = (ethereum: MetaMaskInpageProvider) => {
     ethereum?.on("accountsChanged", handleAccount(ethereum));
   }
 
-  const removeGlobalListeners = (ethereum: MetaMaskInpageProvider) => {
+const removeGlobalListeners = (ethereum: MetaMaskInpageProvider) => {
     ethereum.removeListener("chainChanged", pageReload);
     ethereum.removeListener("accountsChanged", handleAccount);
   }
 
 const Web3Context = createContext<Web3State>(createDefaultState());
 
-const Web3Provider: FunctionComponent = ({children}: any) => {
+const Web3Provider: FunctionComponent<Web3ProviderProps> = ({ children }) => {
     
   const [web3Api, setWeb3Api] = useState<Web3State>(createDefaultState());
 
@@ -75,11 +79,3 @@ export function useHooks() {
 }
 
 export default Web3Provider;
-
-
-
-
-
-
-
-

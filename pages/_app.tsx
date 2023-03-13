@@ -16,9 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       
       <ToastContainer />
-      <Web3Provider>
-        <Component {...pageProps} />
-      </Web3Provider>
+        <Web3Provider>
+          <Component {...pageProps} />
+        </Web3Provider>
     </>
   )
 }
