@@ -29,6 +29,7 @@ yarn-error.log*
 .env*.local
 .env.development
 .env.production
+
 keys.json
 
 # vercel
@@ -36,4 +37,3 @@ keys.json
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
