@@ -23,7 +23,7 @@ const NftCreate: NextPage = () => {
     description: "",
     image: "",
     attributes: [
-      {trait_type: "Evento", value: "La liga"},
+      {trait_type: "Evento", value: "La Liga NFTs"},
       {trait_type: "Zona", value: "A"},
       {trait_type: "Asiento", value: "22"},
       {trait_type: "Categoría", value: "ORO"},
@@ -143,9 +143,9 @@ const NftCreate: NextPage = () => {
       
       await toast.promise(
         tx!.wait(), {
-          pending: "Subiendo metadata",
-          success: "Metadata subida",
-          error: "Metadata error"
+          pending: "Creando NFT ",
+          success: "Nft ha sido creado",
+          error: "Error creando NFT"
         }
       );
     } catch(e: any) {
@@ -233,7 +233,7 @@ const NftCreate: NextPage = () => {
                           name="price"
                           id="price"
                           className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                          placeholder="0.8"
+                          placeholder="0.05"
                         />
                       </div>
                     </div>
