@@ -13,10 +13,6 @@ const NftListSecundario: FunctionComponent = () => {
             {
                 nfts.data?.map( nft => {
 
-                    console.log('====================================');
-                    console.log(nft.transactions.length > 1);
-                    console.log('====================================');
-
                     // if (nft.transactions.length > 1) {
                         return (
                             <div key={nft.meta.image} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
