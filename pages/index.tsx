@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           <div className="text-center">
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Destacados de Congreso Programación NFTs</h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              Entradas virtuales para acceder al evento Congreso XIII de programación. Cada categoría recibirá diferentes ventajas de posición y extras.
+              Entradas virtuales para acceder al evento IV Congreso de programación. Cada categoría recibirá diferentes ventajas de posición y extras.
             </p>
           </div>
           
