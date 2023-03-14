@@ -50,11 +50,6 @@ export default function Example() {
                     alt="Entrablock"
                   />
                   <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://gateway.pinata.cloud/ipfs/Qme4xUnNk6hiahV3LMeiNDB7rDCQ87zCjWowAeeJiXwozW"
-                    alt="Entrablock"
-                  />
-                  <img
                     className="hidden h-8 w-auto lg:block"
                     src="https://gateway.pinata.cloud/ipfs/Qme4xUnNk6hiahV3LMeiNDB7rDCQ87zCjWowAeeJiXwozW"
                     alt="Entrablock"
