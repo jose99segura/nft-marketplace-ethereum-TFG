@@ -25,8 +25,8 @@ const Congreso: NextPage = () => {
   return (
     <BaseLayout>
       <div>
-        {flag ? (
-          `El usuario ${account.data}, posee el NFT ${nftfinal.meta.attributes[0].value}`
+        {flag && nftfinal ? (
+          `El usuario ${account.data}, posee el NFT ${(nftfinal as Nft).meta.attributes[0].value}`
         ) : (
           `El usuario ${account.data} no posee el NFT "Congreso Programación NFTs"`
         )}
