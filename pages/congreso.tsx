@@ -8,7 +8,6 @@ import { Nft } from '@_types/nft';
 
 const Congreso: NextPage = () => {
 
-    const { account } = useAccount();
     const { nfts }  = useOwnedNfts();
     let flag = false;
     let nftfinal: Nft | null = null;
@@ -24,13 +23,24 @@ const Congreso: NextPage = () => {
 
   return (
     <BaseLayout>
-      <div>
-        {flag && nftfinal ? (
-          `El usuario ${account.data}, posee el NFT ${(nftfinal as Nft).meta.attributes[0].value}`
-        ) : (
-          `El usuario ${account.data} no posee el NFT "Congreso Programación NFTs"`
-        )}
+      {flag && nftfinal ? (
+        <div className="h-screen flex flex-col justify-center items-center">
+        <h1 className="text-4xl font-bold mb-8">{(nftfinal as Nft).meta.name}</h1>
+        <video
+          src="/videos/video.mp4"
+          autoPlay
+          loop
+          muted
+          className="object-cover w-full h-full mx-auto"
+        />
       </div>
+      ) : (
+        <div className="w-full h-screen flex justify-center items-center">
+          <h1 className="text-4xl text-center">
+            Necesitas tener el NFT "Congreso Programación NFTs" para acceder a este contenido
+          </h1>
+        </div>
+      )}
     </BaseLayout>
   )
 }
