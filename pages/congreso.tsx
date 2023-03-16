@@ -37,7 +37,7 @@ const Congreso: NextPage = () => {
       ) : (
         <div className="w-full h-screen flex justify-center items-center">
           <h1 className="text-4xl text-center">
-            Necesitas tener el NFT "Congreso Programación NFTs" para acceder a este contenido
+            Necesitas tener el NFT &quot;Congreso Programación NFTs&quot; para acceder a este contenido
           </h1>
         </div>
       )}

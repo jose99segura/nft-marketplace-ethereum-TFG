@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ActiveLink from '../link'
 import { useAccount, useNetwork } from '@hooks/web3'
 import Walletbar from './Walletbar'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Inicio', href: '/', current: true },
@@ -40,19 +41,19 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
+                  <Image
                     className="hidden h-11 w-auto lg:block"
-                    src="https://gateway.pinata.cloud/ipfs/QmXKTnVk7Rdh5NHpAL5MLxEqEhcnzi8B3c8f1FgfAfEwFs"
+                    src="/images/logo/entra.png"
                     alt="Entrablock"
                   />
-                  <img
+                  <Image
                     className="hidden h-11  lg:block"
-                    src="https://gateway.pinata.cloud/ipfs/Qmf3r5UeGF9CUrA7wGwxv3TREf8JdHiYu7jr4FkERs3LY7"
+                    src="/images/logo/block.png"
                     alt="Entrablock"
                   />
-                  <img
+                  <Image
                     className="hidden h-8 w-auto lg:block"
-                    src="https://gateway.pinata.cloud/ipfs/Qme4xUnNk6hiahV3LMeiNDB7rDCQ87zCjWowAeeJiXwozW"
+                    src="/images/logo/logosimp.png"
                     alt="Entrablock"
                   />
                   
