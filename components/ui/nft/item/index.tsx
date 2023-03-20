@@ -21,7 +21,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
             </div>
             <div className="flex-1 bg-white p-6 flex flex-col justify-between">
             <div className="flex-1">
-                <p className="text-sm font-medium text-indigo-600">
+                <p className="text-sm font-medium text-blue-700">
                 {item.meta.attributes[0].value}
                 </p>
                 <div className="block mt-2">
@@ -33,7 +33,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
                 <dl className="-mx-4 -mt-4 flex flex-wrap">
                 <div className="flex flex-col px-4 pt-4">
                     <dt className="order-2 text-sm font-medium text-gray-500">Precio</dt>
-                    <dd className="order-1 text-xl font-extrabold text-indigo-600">
+                    <dd className="order-1 text-xl font-extrabold text-blue-700">
                     <div className="flex justify-center items-center">
                         {item.price}
                         {/* <img className="h-6" src="/images/small-eth.webp" alt='ehter icon'/> */}
@@ -47,7 +47,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
                                 <dt className="order-2 text-sm font-medium text-gray-500">
                                     {attribute.trait_type}
                                 </dt>
-                                <dd className="order-1 text-xl font-extrabold text-indigo-600">
+                                <dd className="order-1 text-xl font-extrabold text-blue-700">
                                     {attribute.value}
                                 </dd>
                             </div>
@@ -57,22 +57,22 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
                 
                 </dl>
             </div>
-            <div>
+            <div className="flex justify-center">
                 <button
                 onClick={() => {
                     buyNft(item.tokenId, item.price);
                   }}
                 type="button"
-                className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                 Comprar
                 </button>
-                <button
+                {/* <button
                 type="button"
                 className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                 Vista Previa
-                </button>
+                </button> */}
             </div>
         </div>
         

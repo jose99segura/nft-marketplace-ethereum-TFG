@@ -45,16 +45,22 @@ export default function Example() {
                     className="hidden h-11 w-auto lg:block"
                     src="/images/logo/entra.png"
                     alt="Entrablock"
+                    width={100}
+                    height={100}
                   />
                   <Image
-                    className="hidden h-11  lg:block"
+                    className="hidden h-11 w-auto lg:block"
                     src="/images/logo/block.png"
                     alt="Entrablock"
+                    width={100}
+                    height={100}
                   />
                   <Image
                     className="hidden h-8 w-auto lg:block"
                     src="/images/logo/logosimp.png"
                     alt="Entrablock"
+                    width={100}
+                    height={100}
                   />
                   
                 </div>

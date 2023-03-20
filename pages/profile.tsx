@@ -132,13 +132,13 @@ const Profile: NextPage = () => {
                   </dl>
                 </div>
 
-                <div className="flex">
-                  <button
+                <div className="flex justify-center">
+                  {/* <button
                     type="button"
                     className="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     Descargar ticket
-                  </button>
+                  </button> */}
                   <button
                   // Funcion para cuando se pulse en vender ticket
                     onClick={() => {
@@ -148,7 +148,7 @@ const Profile: NextPage = () => {
                       )
                     }}
                     type="button"
-                    className="disabled:text-gray-400 disabled:cursor-not-allowed flex-1 ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     {activeNft.isListed ? "Este Nft ya está listado": "Vender ticket"}
                   </button>
