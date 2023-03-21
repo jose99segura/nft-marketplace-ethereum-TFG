@@ -163,7 +163,7 @@ const NftCreate: NextPage = () => {
               <Switch
                 checked={hasURI}
                 onChange={() => setHasURI(!hasURI)}
-                className={`${hasURI ? 'bg-indigo-900' : 'bg-indigo-700'}
+                className={`${hasURI ? 'bg-blue-900' : 'bg-blue-700'}
                   relative inline-flex flex-shrink-0 h-[28px] w-[64px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
               >
                 <span className="sr-only">Use setting</span>
@@ -201,7 +201,7 @@ const NftCreate: NextPage = () => {
                             type="text"
                             name="uri"
                             id="uri"
-                            className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                            className="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                             placeholder="http://link.com/data.json"
                           />
                         </div>
@@ -213,7 +213,7 @@ const NftCreate: NextPage = () => {
                       <div className="font-bold">Tus metadatos: </div>
                       <div>
                         <Link legacyBehavior href={nftURI}>
-                          <a className="underline text-indigo-600">
+                          <a className="underline text-blue-600">
                             {nftURI}
                           </a>
                         </Link>
@@ -232,7 +232,7 @@ const NftCreate: NextPage = () => {
                           type="number"
                           name="price"
                           id="price"
-                          className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                          className="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                           placeholder="0.05"
                         />
                       </div>
@@ -242,7 +242,7 @@ const NftCreate: NextPage = () => {
                     <button
                       onClick={createNft}
                       type="button"
-                      className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                       >
                       Publicar
                     </button>
@@ -276,7 +276,7 @@ const NftCreate: NextPage = () => {
                         type="text"
                         name="name"
                         id="name"
-                        className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                        className="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                         placeholder="Entrada Online Barcelona Real Madrid (Silver)"
                       />
                     </div>
@@ -292,7 +292,7 @@ const NftCreate: NextPage = () => {
                         id="description"
                         name="description"
                         rows={3}
-                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder="Descripción de la entrada..."
                       />
                     </div>
@@ -324,7 +324,7 @@ const NftCreate: NextPage = () => {
                         <div className="flex text-sm text-gray-600">
                           <label
                             htmlFor="file-upload"
-                            className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                            className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
                           >
                             <span>Subir archivo</span>
                             <input
@@ -354,7 +354,7 @@ const NftCreate: NextPage = () => {
                           type="text"
                           name={attribute.trait_type}
                           id={attribute.trait_type}
-                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                          className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         />
                       </div>
                     )}
@@ -367,7 +367,7 @@ const NftCreate: NextPage = () => {
                   <button
                     onClick={uploadMetadata}
                     type="button"
-                    className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     >
                     Publicar
                   </button>

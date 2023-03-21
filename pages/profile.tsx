@@ -49,7 +49,7 @@ const Profile: NextPage = () => {
                             aria-current={tab.current ? 'page' : undefined}
                             className={classNames(
                               tab.current
-                                ? 'border-indigo-500 text-indigo-600'
+                                ? 'border-blue-500 text-blue-600'
                                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
                               'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
                             )}
@@ -75,8 +75,8 @@ const Profile: NextPage = () => {
                         <div
                           className={classNames(
                             nft.tokenId === activeNft?.tokenId
-                              ? 'ring-2 ring-offset-2 ring-indigo-500'
-                              : 'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500',
+                              ? 'ring-2 ring-offset-2 ring-blue-500'
+                              : 'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-blue-500',
                             'group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden'
                           )}
                         >
@@ -135,7 +135,7 @@ const Profile: NextPage = () => {
                 <div className="flex justify-center">
                   {/* <button
                     type="button"
-                    className="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="flex-1 bg-blue-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   >
                     Descargar ticket
                   </button> */}
@@ -148,7 +148,7 @@ const Profile: NextPage = () => {
                       )
                     }}
                     type="button"
-                    className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed mr-2 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-700 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   >
                     {activeNft.isListed ? "Este Nft ya está listado": "Vender ticket"}
                   </button>
