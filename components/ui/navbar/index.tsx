@@ -8,9 +8,9 @@ import Image from 'next/image'
 
 const navigation = [
   { name: 'Inicio', href: '/', current: true },
-  { name: 'Mercado secundario', href: '/secundario', current: false },
-  { name: 'Crear Ticket', href: '/nft/create', current: false },
-  { name: 'Congreso Online', href: '/congreso', current: false }
+  // { name: 'Mercado secundario', href: '/secundario', current: false },
+  // { name: 'Crear Ticket', href: '/nft/create', current: false },
+  // { name: 'Congreso Online', href: '/congreso', current: false }
 ]
 
 function classNames(...classes: string[]) {
@@ -23,7 +23,7 @@ export default function Example() {
   const { network } = useNetwork();
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-sky-900">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

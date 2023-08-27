@@ -93,7 +93,8 @@ const Walletbar: FunctionComponent<WalletbarProps> = ({
         </button>
       </div>
     )
-  } else {
+  } 
+  else {
     return (
       <div>
         <button

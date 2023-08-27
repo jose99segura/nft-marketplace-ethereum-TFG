@@ -14,9 +14,9 @@ const Home: NextPage = () => {
         </div>
         <div className="relative">
           <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Tickets destacados de La Liga NFTs</h2>
+            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Títulos de la Universidad Salamanca NFTs</h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              La liga española de fútbol ofrece la posibilidad de adquirir los tickets NFT y poder ver los partidos de forma online o presencial.
+              Escaparate de los diferentes títulos universitarios obtenidos por los alumnos de la Universidad de Salamanca con su consentimiento para mostrarlos.
             </p>
           </div>
           
@@ -34,19 +34,19 @@ const Home: NextPage = () => {
         </div>
         <div className="relative">
           <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Destacados de Congreso Programación NFTs</h2>
+            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Títulos de la Universidad de Valencia NFTs</h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              Entradas virtuales para acceder al evento IV Congreso de programación. Cada categoría recibirá diferentes ventajas de posición y extras.
+            Escaparate de los diferentes títulos universitarios de máster obtenidos por los alumnos de la universidad de Valencia con su consentimiento para mostrarlos.
             </p>
           </div>
           
-          {/* Mostramos la lista de los nft, que contiene los items */}
           <NftList 
           evento="Congreso Programación NFTs"
           />
 
         </div>
       </div>
+      
     </BaseLayout>
   )
 }
