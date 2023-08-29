@@ -26,9 +26,9 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
-.env.development
-.env.production
+# .env*.local
+# .env.development
+# .env.production
 
 keys.json
 

@@ -31,15 +31,14 @@ const NftItem: FunctionComponent<NftItemProps> = ({item, buyNft}) => {
             </div>
             <div className="overflow-hidden mb-4">
                 <dl className="-mx-4 -mt-4 flex flex-wrap">
-                <div className="flex flex-col px-4 pt-4">
+                {/* <div className="flex flex-col px-4 pt-4">
                     <dt className="order-2 text-sm font-medium text-gray-500">Precio</dt>
                     <dd className="order-1 text-xl font-extrabold text-blue-700">
                     <div className="flex justify-center items-center">
                         {item.price}
-                        {/* <img className="h-6" src="/images/small-eth.webp" alt='ehter icon'/> */}
                     </div>
                     </dd>
-                </div>
+                </div> */}
                 { item.meta.attributes.map(attribute => {
                     if (attribute.trait_type != "Evento") {
                         return (

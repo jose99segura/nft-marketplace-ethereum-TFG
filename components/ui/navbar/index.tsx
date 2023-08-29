@@ -9,7 +9,7 @@ import Image from 'next/image'
 const navigation = [
   { name: 'Inicio', href: '/', current: true },
   // { name: 'Mercado secundario', href: '/secundario', current: false },
-  // { name: 'Crear Ticket', href: '/nft/create', current: false },
+  { name: 'Crear título NFT', href: '/nft/create', current: false },
   // { name: 'Congreso Online', href: '/congreso', current: false }
 ]
 
@@ -42,27 +42,7 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <h2 className='text-white font-extrabold text-xl'>Certi Block</h2>
-                  {/* <Image
-                    className="hidden h-11 w-auto lg:block"
-                    src="/images/logo/entra.png"
-                    alt="Entrablock"
-                    width={100}
-                    height={100}
-                  />
-                  <Image
-                    className="hidden h-11 w-auto lg:block"
-                    src="/images/logo/block.png"
-                    alt="Entrablock"
-                    width={100}
-                    height={100}
-                  />
-                  <Image
-                    className="hidden h-8 w-auto lg:block"
-                    src="/images/logo/logosimp.png"
-                    alt="Entrablock"
-                    width={100}
-                    height={100}
-                  /> */}
+
                   
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

@@ -19,7 +19,7 @@ const NftList: FunctionComponent<NftListProps> = (props) => {
             {
                 nfts.data?.map( nft => {
 
-                    if (nft.meta.attributes[0].value == evento && nft.transactions.length <= 1) {
+                    if (nft.meta.attributes[1].value == evento && nft.transactions.length <= 1) {
 
                         // console.log('====================================');
                         // console.log(nft);

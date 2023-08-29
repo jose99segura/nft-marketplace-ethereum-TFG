@@ -36,7 +36,7 @@ const Profile: NextPage = () => {
             <main className="flex-1 overflow-y-auto">
               <div className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex">
-                  <h1 className="flex-1 text-2xl font-bold text-gray-900">Tus NFTs</h1>
+                  <h1 className="flex-1 text-2xl font-bold text-gray-900">Tus títulos NFTs</h1>
                 </div>
                 <div className="mt-3 sm:mt-2">
                   <div className="hidden sm:block">

@@ -23,10 +23,10 @@ const NftCreate: NextPage = () => {
     description: "",
     image: "",
     attributes: [
-      {trait_type: "Evento", value: "La Liga NFTs"},
-      {trait_type: "Zona", value: "A"},
-      {trait_type: "Asiento", value: "22"},
-      {trait_type: "Categoría", value: "ORO"},
+      {trait_type: "Categoria", value: "Grado"},
+      {trait_type: "Universidad", value: "UA"},
+      {trait_type: "Créditos", value: "60"},
+      {trait_type: "Alumno", value: "12345"},
     ]
   });
 
@@ -182,7 +182,7 @@ const NftCreate: NextPage = () => {
               <div className="px-4 sm:px-0">
                 <h3 className="text-lg font-medium leading-6 text-gray-900">Listar NFT</h3>
                 <p className="mt-1 text-sm text-gray-600">
-                  La información publicada se desplegará de forma pública, ten cuidado con la información que compartes.
+                  La información publicada se desplegará de forma pública. Solo los profesores habilitados podrán crear titulos certificadores.
                 </p>
               </div>
             </div>
@@ -255,9 +255,9 @@ const NftCreate: NextPage = () => {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">Crear NFT Metadatos</h3>
+              <h3 className="text-lg font-medium leading-6 text-gray-900">Crear título NFT para profesores</h3>
               <p className="mt-1 text-sm text-gray-600">
-                La información publicada se desplegará de forma pública, ten cuidado con la información que compartes.
+              La información publicada se desplegará de forma pública. Solo los profesores habilitados podrán crear titulos certificadores.
               </p>
             </div>
           </div>
@@ -267,7 +267,7 @@ const NftCreate: NextPage = () => {
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                      Nombre
+                      Título
                     </label>
                     <div className="mt-1 flex rounded-md shadow-sm">
                       <input
@@ -277,7 +277,7 @@ const NftCreate: NextPage = () => {
                         name="name"
                         id="name"
                         className="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                        placeholder="Entrada Online Barcelona Real Madrid (Silver)"
+                        placeholder="Máster en Blockchain y Smart Contracts"
                       />
                     </div>
                   </div>
