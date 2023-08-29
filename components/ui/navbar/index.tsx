@@ -41,7 +41,8 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image
+                  <h2 className='text-white font-extrabold text-xl'>Certi Block</h2>
+                  {/* <Image
                     className="hidden h-11 w-auto lg:block"
                     src="/images/logo/entra.png"
                     alt="Entrablock"
@@ -61,7 +62,7 @@ export default function Example() {
                     alt="Entrablock"
                     width={100}
                     height={100}
-                  />
+                  /> */}
                   
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
