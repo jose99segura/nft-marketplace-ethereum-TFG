@@ -12,6 +12,6 @@ Este proyecto de Trabajo de Fin de Grado (TFG) se centra en el desarrollo de un 
 
 1. **Registro y Autenticación**: Los usuarios pueden registrarse y autenticarse en la plataforma utilizando sus cuentas de Ethereum.
 2. **Compra y Venta de Entradas**: Los usuarios pueden comprar y vender entradas para eventos utilizando contratos inteligentes en la blockchain.
-3. **Gestión de Inventarios**: Los organizadores de eventos pueden gestionar sus inventarios de entradas de forma descentralizada y transparente.
-4. **Verificación de Autenticidad**: Los compradores pueden verificar la autenticidad de las entradas mediante la blockchain, garantizando la integridad y la legitimidad de las mismas.
+3. **Verificación de Autenticidad**: Los compradores pueden verificar la autenticidad de las entradas mediante la blockchain, garantizando la integridad y la legitimidad de las mismas.
+4. **Acceso a contenido especial con posesión de NFT**: Los usuarios con nft podrán acceder a eventos especiales si poseen el nft en su cartera.
 
